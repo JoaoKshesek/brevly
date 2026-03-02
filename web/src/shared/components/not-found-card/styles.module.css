@@ -1,0 +1,46 @@
+.notFoundCard {
+  width: 100%;
+  margin-top: 10vh;
+  max-width: 580px;
+  padding-inline: 20px;
+  padding-block: 48px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+
+  .title {
+    font-size: var(--text-xl);
+    line-height: var(--lineheight-xl);
+    font-weight: var(--weight-bold);
+    color: var(--color-gray-600);
+    text-align: center;
+  }
+
+  .description {
+    font-size: var(--text-md);
+    line-height: var(--lineheight-md);
+    font-weight: var(--weight-semibold);
+    color: var(--color-gray-500);
+    text-align: center;
+  }
+
+  .link {
+    color: var(--color-blue-base);
+    text-decoration: underline;
+  }
+
+  .link:hover {
+    opacity: 0.8;
+    transition: all ease-in 100ms;
+  }
+}
+
+@media (min-width: 768px) {
+  .notFoundCard {
+    padding-inline: 48px;
+    padding-block: 64px;
+  }
+}

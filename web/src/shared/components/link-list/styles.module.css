@@ -1,0 +1,109 @@
+.linkList {
+  width: 100%;
+  padding: 24px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+
+  .loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    overflow: hidden;
+    background: transparent;
+  }
+
+  .loader::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 40%;
+    background: var(--color-blue-base);
+    animation: loading-bar 1.2s ease-in-out infinite;
+  }
+
+  .cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .title {
+    font-size: var(--text-xl);
+    line-height: var(--lineheight-xl);
+    font-weight: var(--weight-bold);
+    color: var(--color-gray-600);
+  }
+
+  .infobox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 24px;
+    color: var(--color-gray-400);
+
+    .infoText {
+      color: var(--color-gray-500);
+      font-size: var(--text-xs);
+      line-height: var(--lineheight-xs);
+      font-weight: var(--weight-regular);
+      text-transform: uppercase;
+    }
+  }
+
+  .links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    max-height: 50vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-gutter: stable;
+  }
+
+  .withScroll {
+    padding-right: 10px;
+  }
+
+  .spin {
+    animation: spin 1s linear infinite;
+  }
+}
+
+@media (min-width: 768px) {
+  .linkList {
+    padding: 32px;
+    gap: 24px;
+  }
+}
+
+@keyframes loading-bar {
+  0% {
+    left: -40%;
+  }
+
+  50% {
+    left: 60%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
