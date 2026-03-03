@@ -15,6 +15,7 @@ import { transformSwaggerSchema } from "./transform-swagger-schema";
 import { getLinkBySlugRoute } from "./routes/get-link-by-slug";
 import { deleteLinkRoute } from "./routes/delete-link-by-slug";
 import { updateLinkAccessCount } from "./routes/update-link-access-count";
+import { healthCheckRoute } from "./routes/health-check";
 
 const server = fastify();
 
@@ -79,6 +80,7 @@ server.register(deleteLinkRoute);
 server.register(getLinkBySlugRoute);
 server.register(exportLinksRoute);
 server.register(updateLinkAccessCount);
+server.register(healthCheckRoute);
 
 server.listen({ port: env.PORT, host: "0.0.0.0" }).then(() => {
   console.log(`HTTP Server running at port ${env.PORT}!`);
